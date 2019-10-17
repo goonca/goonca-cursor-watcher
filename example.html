@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prada Global</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="goonca-cursor-watcher.js"></script>
+
+
+    <style type="text/css">
+
+        .my-obj {
+            border: 1px solid black;
+            padding: 20px;
+            position:absolute;
+            top: 200px;
+            left: 200px;
+        }
+
+        p {
+            margin: 0;
+        }
+        
+    </style>
+
+    <script type="text/javascript">
+
+        const _onChange = x => {
+
+            $('.d-l').text(x.distances.left + 'px')
+            $('.d-r').text(x.distances.right + 'px')
+            $('.d-t').text(x.distances.top + 'px')
+            $('.d-b').text(x.distances.bottom + 'px')           
+        }
+
+
+        $(document).ready(() => {
+
+            const params = {
+                target : $('.my-obj'),
+                onChange : _onChange
+            }
+
+            new $goonca.cursorWatcher(params).apply();
+        });
+
+
+    </script>
+</head>
+<body>
+
+    <div class="my-obj">
+        <p>Distances from:</p>
+        <p>Left: <span class='d-l'></span></p>
+        <p>Top: <span class='d-t'></span></p>
+        <p>Right: <span class='d-r'></span></p>
+        <p>Bottom: <span class='d-b'></span></p>
+    </div>
+     
+    
+</body>
+</html>
