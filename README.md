@@ -1,3 +1,3 @@
 # goonca-cursor-watcher
 
-not ready yet...
+still working on it
